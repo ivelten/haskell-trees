@@ -1,0 +1,31 @@
+cabal-version:      3.0
+name:               trees
+version:            0.1.0.0
+license:            MIT
+license-file:       LICENSE
+author:             Ismael Carlos Velten
+maintainer:         ismaelcarlosvelten@gmail.com
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  Trees
+    build-depends:    base ^>=4.17.2.0
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+test-suite trees-test
+    import:           warnings
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    build-depends:
+        base ^>=4.17.2.0,
+        trees,
+        tasty,
+        tasty-hunit
